@@ -13,7 +13,7 @@ body {
   overflow-x: hidden; 
 }
 
-.rates {
+.Social-proof {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -73,7 +73,7 @@ body {
 .rating-cards .rating-card:nth-child(2) { transform: translateX(20px); }
 .rating-cards .rating-card:nth-child(3) { transform: translateX(40px); }
 
-.rate-cards {
+.testimonials {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
