@@ -42,7 +42,6 @@ body {
 }
 
 .rating-cards {
-  position: absolute;
   right: 2.5rem;
   top: 3.5rem;
   display: flex;
@@ -129,3 +128,105 @@ body {
   text-align: center;
 }
 }
+
+/* // Select all elements
+var oldPrice = document.getElementById("price");
+var discountInput = document.getElementById("discount");
+var applyBtn = document.getElementById("apply-discount");
+var qtyInput = document.getElementById("qty");
+var totalDisplay = document.getElementById("total");
+var vid = document.getElementById("vid");
+var buyBtn = document.getElementById("buy-button");
+var clickCountDisplay = document.getElementById("click-count");
+
+var buyClicks = 0; // Buy Now click counter
+
+// Initialize original price if not already set
+if (!oldPrice.dataset.original) {
+    oldPrice.dataset.original = oldPrice.textContent;
+}
+
+// 1️⃣ Update total price function
+function updateTotal() {
+    var quantity = Number(qtyInput.value) || 1;
+    var pricePerItem = Number(oldPrice.textContent);
+    var totalPrice = quantity * pricePerItem;
+
+    totalDisplay.textContent = "Total: $" + totalPrice.toFixed(2);
+}
+
+// 2️⃣ Apply discount function
+function discount() {
+    var discountValue = Number(discountInput.value) || 0;
+    var quantity = Number(qtyInput.value) || 1;
+    var originalPrice = Number(oldPrice.dataset.original);
+
+    // Calculate discounted price per item
+    var discountedPrice = originalPrice - (originalPrice * discountValue / 100);
+
+    // Update price per item display
+    oldPrice.textContent = discountedPrice.toFixed(2);
+
+    // Calculate total price for quantity
+    var totalPrice = discountedPrice * quantity;
+    totalDisplay.textContent = "Total: $" + totalPrice.toFixed(2);
+
+    // Video blur logic
+    if (discountValue >= 50) {
+        vid.style.filter = "blur(0px)";
+    } else {
+        vid.style.filter = "blur(10px)";
+    }
+
+    // Disable discount button after applying
+    applyBtn.disabled = true;
+}
+
+// 3️⃣ Buy Now click counter
+function buyNowClick() {
+    buyClicks++;
+    clickCountDisplay.textContent = "Clicked " + buyClicks + " times";
+}
+
+// 4️⃣ Event listeners
+applyBtn.addEventListener("click", discount);
+qtyInput.addEventListener("input", updateTotal);
+buyBtn.addEventListener("click", buyNowClick);
+
+// 5️⃣ Initialize total on page load
+updateTotal();
+
+// Select the Add to Cart button (and Buy button if needed)
+var addToCartBtn = document.querySelector(".add-to-cart-button");
+var buyBtn = document.getElementById("buy-button");
+
+// Defensive check
+if (!addToCartBtn) {
+    console.error("script.js: .add-to-cart-button not found in the DOM");
+} else {
+    // Function to show visual feedback when clicked (uses CSS class .added)
+    function addToCartFeedback() {
+        // apply visual state
+        addToCartBtn.textContent = "Added!";
+        addToCartBtn.classList.add("added");
+
+        // reset after 1.5 seconds
+        setTimeout(function() {
+            addToCartBtn.textContent = "Add to Cart";
+            addToCartBtn.classList.remove("added");
+        }, 1500);
+    }
+
+    // Add event listener
+    addToCartBtn.addEventListener("click", addToCartFeedback);
+}
+
+// Optional: integrate with buy-button click (if you want add-to-cart visual to trigger on buy)
+if (buyBtn) {
+    buyBtn.addEventListener("click", function() {
+        // keep buy-button behavior separate; trigger add-to-cart visual too
+        if (addToCartBtn) {
+            addToCartFeedback();
+        }
+    });
+} */
