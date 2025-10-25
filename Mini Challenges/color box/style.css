@@ -1,0 +1,39 @@
+section {   
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.palette {
+    height: 300px;
+    width: 500px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(122, 177, 211);
+}
+.palette-box {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px grey;
+}
+.palette-box:hover {
+        transform: scale(1.1);
+    }
+
+
+#color-1 {
+    background-color: rgb(146, 70, 70);
+}
+#color-2 {
+    background-color: rgb(76, 76, 155);
+}
+#color-3 {
+    background-color: rgb(113, 141, 71);
+}
+#color-4 {
+    background-color: rgb(240, 126, 240);
+}

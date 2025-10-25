@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Changer — Mini Challenge 1</title>
+</head>
+<link rel="stylesheet" href="style.css" />
+<body>
+  <main class="container">
+    <h1 style="text-align: center;">Color Changer Palette</h1>
+
+    <section class="card" id="color-changer">
+      <p class="hint">Click a box to change the page background and show the color name.</p>
+
+      <div class="palette" id="palette">
+        <div class="palette-box" id="color-1" data-fame="rgb(146, 70, 70)"></div>
+        <div class="palette-box" id="color-2" data-fame="rgb(76, 76, 155)"></div>
+        <div class="palette-box" id="color-3" data-fame="rgb(113, 141, 71)"></div>
+        <div class="palette-box" id="color-4" data-fame="rgb(240, 126, 240)"></div>
+      </div>
+
+      <div class="info-row">
+        <p  id="selecter"></p>
+        <button id="reset-button" onclick="document.body.style.backgroundColor='white'">Reset</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
