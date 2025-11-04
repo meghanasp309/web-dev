@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Higher or Lower Card Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+  <!-- Sounds -->
+  <audio id="win-sound" src="https://actions.google.com/sounds/v1/cartoon/concussive_hit_guitar_boing.ogg"></audio>
+  <audio id="lose-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <audio id="tie-sound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+
+  <!-- Start/Theme Modal (shown once) -->
+  <div id="start-modal" class="modal" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <h2>Higher or Lower</h2>
+      <p>
+        Pick a theme and a character, then guess if the next card is higher or lower than the shown one. Reach 4 points to win!
+      </p>
+
+      <!-- Theme selector -->
+      <div class="theme-row" role="group" aria-label="Theme selection">
+        <label class="theme-option">
+          <input type="radio" name="theme" value="dark" checked />
+          <span>Dark</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="soft-harmony" />
+          <span>Soft Harmony</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="vintage" />
+          <span>Vintage</span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="beachside-calm" />
+          <span>Beachside Calm</span>
+        </label>
+      </div>
+
+      <button id="start-btn">Continue</button>
+    </div>
+  </div>
+
+  <div class="container" id="main-container">
+    <h1 id="game-title">Higher or Lower Card Game</h1>
+
+    <!-- Short in-game hint -->
+    <div id="ingame-hint" class="instructions" style="display:none;">
+      <p>Guess if the next card is higher or lower than the shown card.</p>
+    </div>
+
+    <!-- Character selection grid appears after Continue -->
+    <div id="character-selection" class="character-selection" style="display:none;"></div>
+
+    <!-- Name entry is removed per your request (no names) -->
+
+    <div id="game-area" class="game-area" style="display:none;">
+      <div id="player-meta"></div>
+      <div id="score">Score: 0</div>
+
+      <div class="cards-row">
+        <!-- Card 1 (shown) -->
+        <img id="card-img-1" src="https://deckofcardsapi.com/static/img/back.png" alt="Shown card" />
+
+        <!-- Card 2 (hidden -> reveal) as a flip container -->
+        <div class="flip-card" id="flip-card-2">
+          <div class="flip-inner" id="flip-inner-2">
+            <img class="flip-front" id="card2-back" src="https://deckofcardsapi.com/static/img/back.png" alt="Hidden card back" />
+            <img class="flip-back" id="card2-face" src="https://deckofcardsapi.com/static/img/back.png" alt="Hidden card face" />
+          </div>
+        </div>
+      </div>
+
+      <div id="button-row">
+        <button id="higher-btn">Higher</button>
+        <button id="lower-btn">Lower</button>
+        <button id="restart-btn" style="display:none;">Restart</button>
+      </div>
+
+      <div id="message"></div>
+    </div>
+  </div>
+
+  <div id="fullscreen-overlay" style="display:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
